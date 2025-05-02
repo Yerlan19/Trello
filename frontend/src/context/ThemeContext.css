@@ -1,0 +1,53 @@
+body.light {
+    --bg: #f4f5f7;
+    --text: #222;
+    --text-muted: #666;
+    --card-bg: #ffffff;
+    --input-bg: #fff;
+    --border: #ccc;
+    --primary: #0079bf;
+    --primary-hover: #005a8c;
+    --success: #61bd4f;
+    --success-hover: #519839;
+    --add-column-bg: rgba(255, 255, 255, 0.1);
+    --add-column-hover: rgba(255, 255, 255, 0.2);
+    --add-card-bg: rgba(0, 0, 0, 0.1);
+    --add-card-hover: rgba(0, 0, 0, 0.2);
+    --button-text: white;
+    --context-bg: #fff;
+    --card-hover-bg: #f9f9f9;
+}
+
+body.dark {
+    --bg: #1e1e1e;
+    --text: #f1f1f1;
+    --text-muted: #aaa;
+    --card-bg: #2a2a2a;
+    --input-bg: #333;
+    --border: #555;
+    --primary: #3399ff;
+    --primary-hover: #0077cc;
+    --success: #4caf50;
+    --success-hover: #388e3c;
+    --add-column-bg: rgba(255, 255, 255, 0.05);
+    --add-column-hover: rgba(255, 255, 255, 0.1);
+    --add-card-bg: rgba(255, 255, 255, 0.08);
+    --add-card-hover: rgba(255, 255, 255, 0.15);
+    --button-text: white;
+    --context-bg: #333;
+    --card-hover-bg: #3a3a3a;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.board-card,
+.section,
+.card {
+    background-color: var(--card-bg);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
+}

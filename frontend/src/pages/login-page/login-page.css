@@ -1,0 +1,134 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.login-page-main {
+    background: #58a6ff;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.login-page-main:hover {
+    transform: scale(1.02);
+}
+
+.login-page-logo {
+    text-align: right;
+}
+
+.login-page-logo button {
+    background: none;
+    border: none;
+    color: #8b949e;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.login-page-logo button:hover {
+    color: #f0f6fc;
+}
+
+h3 {
+    font-size: 18px;
+    color: #f0f6fc;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #888888;
+    color: #f0f6fc;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border: 1px solid #58a6ff;
+    box-shadow: 0 0 5px rgba(88, 166, 255, 0.5);
+}
+
+.login-page-form-password-bot {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #8b949e;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.eye-icon:hover {
+    color: #f0f6fc;
+}
+
+.error-message {
+    color: #ff7b72;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #238636, #2ea043);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, #2ea043, #3fb950);
+    transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+    .login-page-main {
+        padding: 30px;
+        max-width: 100%;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-page {
+        padding: 10px;
+    }
+}

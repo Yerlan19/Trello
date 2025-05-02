@@ -1,0 +1,145 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    padding-top: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--text);
+}
+
+.boards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    justify-content: center;
+}
+
+.board-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    position: relative;
+    color: var(--text);
+}
+
+.board-card h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: var(--text);
+}
+
+.board-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    background: var(--card-hover-bg, #f9f9f9);
+}
+
+p {
+    font-size: 14px;
+    color: var(--text-muted, #888);
+}
+
+.error {
+    color: #d32f2f;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .boards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .board-card {
+        width: 90%;
+    }
+}
+
+.menu-btn {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    visibility: visible;
+}
+
+.menu-btn:hover {
+    opacity: 0.8;
+}
+
+.context-menu {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    background: var(--context-bg);
+    border-radius: 6px;
+    padding: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    min-width: 150px;
+}
+
+.context-menu button {
+    background: none;
+    border: none;
+    color: var(--text);
+    padding: 8px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    display: block;
+}
+
+.context-menu button:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.create-board-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card-bg);
+    color: var(--text);
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 20px;
+    width: 260px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px dashed var(--border);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.create-board-card button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--text);
+}

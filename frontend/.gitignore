@@ -1,0 +1,56 @@
+# === Node.js / React / Vite ===
+node_modules/
+dist/
+build/
+.out/
+.next/
+coverage/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === Vite specific ===
+.vite/
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+*.db
+*.sqlite3
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# === VSCode / JetBrains IDEs ===
+.vscode/
+.idea/
+
+# === Environment variables ===
+.env
+.env.*
+!.env.example
+
+# === System / Temp Files ===
+.DS_Store
+Thumbs.db
+tmp/
+temp/
+*.log
+*.swp
+*.swo
+
+# === Optional - Lock files (if you're using only one manager) ===
+# package-lock.json
+# yarn.lock
+
+# === macOS metadata ===
+*.DS_Store
