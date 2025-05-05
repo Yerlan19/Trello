@@ -72,4 +72,5 @@ class CardCreate(BaseModel):
 
 class CardUpdate(BaseModel):
     title: str
+    description: Optional[str] = None  
 

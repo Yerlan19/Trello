@@ -18,6 +18,8 @@ export const Section = memo(({
   onToggleAddCard,
   onCardTitleChange,
   onCreateCard,
+  onEditCard, // <-- новый
+  onDeleteCard, // <-- новый
   addingCard,
   newCards,
 }) => (
@@ -73,7 +75,14 @@ export const Section = memo(({
             <ul className="cards" ref={provided.innerRef} {...provided.droppableProps}>
               {section.cards?.length > 0 ? (
                 section.cards.map((card, cardIndex) => (
-                  <CardItem key={card.id} card={card} index={cardIndex} />
+                  <CardItem
+                    key={card.id}
+                    card={card}
+                    index={cardIndex}
+                    sectionId={section.id} 
+                    onEditCard={(id, title, desc) => onEditCard(section.id, id, title, desc)}
+                    onDeleteCard={(id) => onDeleteCard(section.id, id)}
+                  />
                 ))
               ) : (
                 <li className="no-cards">Нет карточек</li>

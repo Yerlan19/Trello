@@ -9,6 +9,7 @@ from fastapi import (
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
+from fastapi import Body
 
 from app.core.db import db_helper
 from app.crud.auth import login_user, get_current_user
@@ -150,12 +151,12 @@ async def create_card_route(
 @router.put("/cards/{card_id}", response_model=schemas.CardRead)
 async def update_card_route(
     card_id: int,
-    newTitle: str = Query(..., alias="title"),
+    card_in: schemas.CardUpdate = Body(...),
     session: AsyncSession = Depends(db_helper.session_getter),
     user = Depends(get_current_user),
 ):
-    card_in = schemas.CardUpdate(title=newTitle)
     return await update_card(session, card_id, card_in, user.id)
+
 
 
 @router.delete("/cards/{card_id}", response_model=schemas.CardRead)

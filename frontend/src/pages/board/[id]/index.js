@@ -7,6 +7,7 @@ import { Section } from "./Section";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchBoardById, setBoard } from "../../../app/store/slices/boardSlice";
 import "./board-page.css";
+import { updateCard, deleteCard } from "../../../app/store/slices/cardSlice";
 
 const API_URL = "http://127.0.0.1:8000";
 
@@ -24,6 +25,14 @@ const BoardPage = () => {
   const [editingSection, setEditingSection] = useState(null);
   const [editedTitle, setEditedTitle] = useState("");
   const [menuOpen, setMenuOpen] = useState(null);
+
+  const handleEditCard = (sectionId, cardId, title, description) => {
+    dispatch(updateCard({ sectionId, cardId, title, description }));
+  };
+
+  const handleDeleteCard = (sectionId, cardId) => {
+    dispatch(deleteCard({ sectionId, cardId }));
+  };
 
   useEffect(() => {
     if (id) dispatch(fetchBoardById(id));
@@ -263,6 +272,8 @@ const BoardPage = () => {
                       }))
                     }
                     onCreateCard={handleCreateCard}
+                    onEditCard={handleEditCard}        // ✅ добавлено
+                    onDeleteCard={handleDeleteCard}    // ✅ добавлено
                     addingCard={addingCard}
                     newCards={newCards}
                   />

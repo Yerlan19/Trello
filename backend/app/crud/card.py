@@ -59,6 +59,8 @@ async def update_card(
         raise HTTPException(status_code=403, detail="Forbidden")
 
     card.title = card_in.title
+    card.description = card_in.description  # ← если ты используешь поле description в модели
+
     await db.commit()
     await db.refresh(card)
     return card
